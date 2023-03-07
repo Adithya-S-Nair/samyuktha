@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+.body{
+background-color: #ff00ff;
+overflow: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+ 
+.header {
+    border-bottom: 1px solid #E2E8F0;
+    
+
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgb(80,68,76);
+    background-color: rgba(0, 0, 0, 0.5);
+   
+    
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #f3008e;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fbfbfb;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.nav-link:hover{
+    color: #3b393b;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.container {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  }
+
+
+  .container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.neon {
+  font-family: neon;
+  color: #FB4264;
+  font-size: 2vw;
+  line-height: 2vw;
+  text-shadow: 0 0 3vw #F40A35;
+}
+
+
+.neon {
+    animation: neon 2.5s ease infinite;
+    -moz-animation: neon 2.5s ease infinite;
+    -webkit-animation: neon 2.5s ease infinite;
+  }
+  
+  @keyframes neon {
+   
+    50% {
+      text-shadow : 0 0 .5vw #ff0800, 0 0 1.5vw #ff0800, 0 0 5vw #f3150e, 0 0 5vw #800E0B, 0 0 .2vw #ff1911, ;
+      color : #fffbfb;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 3.5rem;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+}
+
+
+
+.first{
+    background: rgb(146,140,149);
+background: linear-gradient(90deg, rgba(146,140,149,1) 25%, rgba(255,241,253,1) 90%);
+
+
+width: 100%;
+height: 700px;
+
+
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  
+    mask-image: radial-gradient(
+      white 0%,
+      white 30%,
+      transparent 80%,
+      transparent
+    );
+  }
+  
+  .circle-container {
+    particleNum: 200;
+    particleColor: hsl(180, 100%, 80%);
+  
+    position: absolute;
+    transform: translateY(-10vh);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  
+    .circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      background-image: radial-gradient(
+        hsl(180, 100%, 80%),
+        hsl(180, 100%, 80%) 10%,
+        hsla(180, 100%, 80%, 0) 56%
+      );
+  
+      animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
+  
+      @keyframes fade-frames {
+        0% {
+          opacity: 1;
+        }
+  
+        50% {
+          opacity: 0.7;
+        }
+  
+        100% {
+          opacity: 1;
+        }
+      }
+  
+      @keyframes scale-frames {
+        0% {
+          transform: scale3d(0.4, 0.4, 1);
+        }
+  
+        50% {
+          transform: scale3d(2.2, 2.2, 1);
+        }
+  
+        100% {
+          transform: scale3d(0.4, 0.4, 1);
+        }
+      }
+    }
+  
+    $particleBaseSize: 8;
+  
+    @for $i from 1 through $particleNum {
+      &:nth-child(#{$i}) {
+        $circleSize: random($particleBaseSize);
+        width: $circleSize + px;
+        height: $circleSize + px;
+  
+        $startPositionY: random(10) + 100;
+        $framesName: "move-frames-" + $i;
+        $moveDuration: 28000 + random(9000) + ms;
+  
+        animation-name: #{$framesName};
+        animation-duration: $moveDuration;
+        animation-delay: random(37000) + ms;
+  
+        @keyframes #{$framesName} {
+          from {
+            transform: translate3d(random(100) + vw, $startPositionY + vh, 0);
+          }
+  
+          to {
+            transform: translate3d(random(100) + vw, -$startPositionY - random(30) + vh, 0);
+          }
+        }
+  
+        .circle {
+          animation-delay: random(4000) + ms;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  mask-image: radial-gradient(
+    white 0%,
+    white 30%,
+    transparent 80%,
+    transparent
+  );
+}
+
+.circle-container {
+  position: absolute;
+  transform: translateY(-10vh);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  background-image: radial-gradient(
+    hsl(180, 100%, 80%),
+    hsl(180, 100%, 80%) 10%,
+    hsla(180, 100%, 80%, 0) 56%
+  );
+
+  animation: fade-frames 200ms infinite, scale-frames 2s infinite;
+
+  @keyframes fade-frames {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.7;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-frames {
+    0% {
+      transform: scale3d(0.4, 0.4, 1);
+    }
+
+    50% {
+      transform: scale3d(2.2, 2.2, 1);
+    }
+
+    100% {
+      transform: scale3d(0.4, 0.4, 1);
+    }
+  }
+}
+
+.message {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: white;
+  font-family: "Josefin Slab", serif;
+  line-height: 27px;
+  font-size: 18px;
+  text-align: right;
+  pointer-events: none;
+  animation: message-frames 1.5s ease 5s forwards;
+  opacity: 0;
+
+  @keyframes message-frames {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+.theyyam{
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .theyyam{
+    width: 100%;
+    
+    width:auto
+    
+   
+  }
+}
+
+@media (min-width: 469px) {
+  .theyyam{
+    width: 100%;
+    max-width: 2048px;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+.second{
+    background: rgb(146,140,149);
+    background: linear-gradient(90deg, rgba(146,140,149,1) 25%, rgba(255,241,253,1) 90%);
+
+    width: 100%;
+    height: 500px;
+
+
+
+}
+
+.third{
+    background: rgb(146,140,149);
+background: linear-gradient(90deg, rgba(146,140,149,1) 25%, rgba(255,241,253,1) 90%);
+
+    width: 100%;
+    height: 400px;
+
+
+
+}
+
+
+.events{
+    background: rgb(146,140,149);
+background: linear-gradient(90deg, rgba(146,140,149,1) 25%, rgba(255,241,253,1) 90%);
+width: 100%;
+height: 400px;
+
+
+}
+
+
+
+.footer{
+background-color: black;
+
+width: 100%;
+height: 200px;
+}
+
+
+
+
+/* Styles for small screens */
+@media screen and (max-width: 768px) {
+    .first
+    .second,
+    .third,
+    .events,
+    .footer {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Styles for larger screens */
+  @media screen and (min-width: 769px) {
+    .first
+    .second,
+    .third 
+    .events,
+    .footer {
+      width: 100%;
+      clear: both;
+    }
+  }
+  
