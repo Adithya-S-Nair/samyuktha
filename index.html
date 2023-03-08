@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+    <!-- Bootstrap JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+        defer></script>
+    <script src="./Public/js/script.js"></script>
     <title>Samyuktha</title>
+
 </head>
-<body>
-    
+
+<body onscroll="navBg()">
+    <div class='hero-img'></div>
+    <div class='wrapper'>
+        <header id="header">
+            <a href="/" class="logo">Samyuktha</a>
+            <nav id='nav'>
+                <svg class='close' viewBox="0 0 512 512" onclick="closeNav()">
+                    <path
+                        d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z" />
+                </svg>
+                <ul>
+                    <li>
+                        <a href="/" class="active" id="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/" id="about">About</a>
+                    </li>
+                    <li>
+                        <a href="/" id="services">Services</a>
+                    </li>
+                    <li>
+                        <a href="/" id="contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu" onclick="openNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </header>
+        <section class="hero">
+            <h1>Samyuktha</h1>
+            <!-- <p class='sub-head'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium illum similique
+                ipsum sunt commodi officia.</p> -->
+        </section>
+    </div>
 </body>
+
 </html>

@@ -1,0 +1,216 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transition: background-color 250ms;
+}
+
+header .logo {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header .logo:hover {
+  color: rgb(255, 255, 255);
+}
+
+header nav {
+  margin: 4em;
+  transform: unset;
+}
+
+header .menu,
+header svg {
+  display: none;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 4.1em;
+  margin: 0;
+}
+
+header nav ul a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+header nav ul a:hover{
+  color: rgb(255, 255, 255);
+}
+
+header nav ul a::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  border-bottom: 2px solid rgba(221, 221, 221, 0.414);
+  bottom: -6px;
+  transition: width 0.3s;
+}
+
+header nav ul a.active::before {
+  position: absolute;
+  content: "";
+  width: 35%;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  bottom: -6px;
+}
+
+header nav ul li a:hover::before {
+  width: 35%;
+}
+
+.hero-img {
+  z-index: -2;
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(transparent, black), url('./Public/Images/hero-img.jpg');
+  background-size: cover;
+  background-position-x: -8em;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  z-index: -1;
+}
+
+section.hero {
+  height: 90vh;
+}
+
+section.hero h1 {
+  font-size: 5.2rem;
+  margin-top: 8em;
+  line-height: 2rem;
+  letter-spacing: 0.3em;
+  color: white;
+  text-align: center;
+  bottom: 5;
+}
+
+section.hero .sub-head {
+  font-size: 1.8rem;
+  color: white;
+}
+
+section.about {
+  height: 100vh;
+}
+
+section.about h1 {
+  font-size: 5rem;
+}
+
+@media only screen and (max-width: 680px) {
+  body {
+    margin: 1.5em;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header .menu {
+    margin-top: -0.6em;
+    cursor: pointer;
+    display: block;
+  }
+
+  header .menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+  }
+
+  header nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background: black;
+    width: 50%;
+    z-index: 2;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    margin: unset;
+  }
+
+  header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 8em;
+    display: list-item;
+  }
+
+  header nav ul a {
+    color: rgb(255, 255, 255);
+    padding: 0.75em 2em;
+    display: block;
+    width: 100%;
+  }
+
+  header nav ul a::before {
+    display: none;
+  }
+
+  header nav ul a:hover {
+    color: red;
+    background: white;
+    font-weight: bold;
+  }
+
+  header nav svg.close {
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin: 2em;
+    width: 2.5em;
+  }
+
+  header nav svg.close path {
+    fill: rgb(235, 235, 235);
+  }
+
+  .hero-img {
+    background-position-x: -43em;
+  }
+}
